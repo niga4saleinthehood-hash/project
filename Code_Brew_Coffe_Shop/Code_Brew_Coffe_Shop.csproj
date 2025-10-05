@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6AE8E7B-CD3F-437C-8166-17B983E4BA0D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Code_Brew_Coffe_Shop</RootNamespace>
+    <AssemblyName>Code_Brew_Coffe_Shop</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="domain\Customers\Customer.cs" />
+    <Compile Include="domain\Customers\MemberCustomer.cs" />
+    <Compile Include="domain\Customers\WalkInCustomer.cs" />
+    <Compile Include="domain\Event.cs" />
+    <Compile Include="domain\Order.cs" />
+    <Compile Include="domain\OrderItem.cs" />
+    <Compile Include="domain\Products\CoffeeDrink.cs" />
+    <Compile Include="domain\Enum.cs" />
+    <Compile Include="domain\Products\Pastry.cs" />
+    <Compile Include="domain\Products\Product.cs" />
+    <Compile Include="domain\Products\TeaDrink.cs" />
+    <Compile Include="domain\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="domain\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pricing\DefaultPriceRule.cs" />
+    <Compile Include="Pricing\DefaultVatPercent.cs" />
+    <Compile Include="Pricing\IOrderDiscountPolicy.cs" />
+    <Compile Include="Pricing\IPriceRule.cs" />
+    <Compile Include="Pricing\IRecieptFormat.cs" />
+    <Compile Include="Pricing\ITaxCaculator.cs" />
+    <Compile Include="Pricing\NoOrderDiscount.cs" />
+    <Compile Include="Pricing\SimpleReciepFormater.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Promotion\BuyXGetYPromotion.cs" />
+    <Compile Include="Promotion\ProductContext.cs" />
+    <Compile Include="Promotion\PromotionContext.cs" />
+    <Compile Include="Promotion\IPriceRulePromotion.cs" />
+    <Compile Include="Promotion\PromotionResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="repository\InMemoryRepository.cs" />
+    <Compile Include="repository\IRepository.cs" />
+    <Compile Include="repository\TotalCalculator.cs" />
+    <Compile Include="Service\InventoryService.cs" />
+    <Compile Include="Service\OrderService.cs" />
+    <Compile Include="Service\PromotionService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
